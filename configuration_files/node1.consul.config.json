@@ -12,12 +12,12 @@
             ]
         },
         {
-            "id":"elastic",
-            "name":"elastic",
-            "port":9200,
+            "id":"mail",
+            "name":"mail",
+            "port":8025,
             "checks":[
                 {
-                    "http":"http://localhost:9200/health",
+                    "http":"http://localhost:8025",
                     "interval":"15s"
                 }
             ]
