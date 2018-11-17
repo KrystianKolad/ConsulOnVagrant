@@ -1,0 +1,19 @@
+{
+    "services" :[
+        {
+            "id":"redis",
+            "name":"redis",
+            "port":6379
+        },
+        {
+            "id":"elastic",
+            "name":"elastic",
+            "port":9200
+        },
+        {
+            "id":"www",
+            "name":"www",
+            "port":80
+        }
+    ]
+}
