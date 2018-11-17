@@ -3,17 +3,35 @@
         {
             "id":"redis",
             "name":"redis",
-            "port":6379
+            "port":6379,
+            "checks":[
+                {
+                    "args":["redis-cli","ping"],
+                    "interval":"15s"
+                }
+            ]
         },
         {
             "id":"elastic",
             "name":"elastic",
-            "port":9200
+            "port":9200,
+            "checks":[
+                {
+                    "http":"http://localhost:9200/health",
+                    "interval":"15s"
+                }
+            ]
         },
         {
             "id":"www",
             "name":"www",
-            "port":80
+            "port":80,
+            "checks":[
+                {
+                    "http":"http://localhost:80",
+                    "interval":"15s"
+                }
+            ]
         }
     ]
 }
