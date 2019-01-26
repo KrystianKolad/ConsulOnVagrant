@@ -21,7 +21,7 @@ apt-get update
 apt-get install -y nginx
 #install consul
 echo "Installing consul"
-wget https://releases.hashicorp.com/consul/1.4.0/consul_1.4.0_linux_amd64.zip -O consul.zip --quiet
+wget https://releases.hashicorp.com/consul/1.4.1/consul_1.4.1_linux_amd64.zip -O consul.zip --quiet
 unzip consul.zip >/dev/null
 chmod +x consul
 #run consul
