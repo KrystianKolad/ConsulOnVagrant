@@ -21,8 +21,7 @@ echo "Installing consul"
 wget https://releases.hashicorp.com/consul/1.4.1/consul_1.4.1_linux_amd64.zip -O consul.zip --quiet
 unzip consul.zip >/dev/null
 chmod +x consul
-mkdir /applications
-mkdir /applications/consul
+mkdir -p /applications/consul
 cp ./consul ./consul.config.json /applications/consul/
 #run consul
 systemctl enable consul.service
