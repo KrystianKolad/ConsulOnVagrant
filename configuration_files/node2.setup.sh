@@ -5,11 +5,7 @@ apt-get update
 apt-get install -y unzip dnsmasq
 #install redis
 echo "Installing redis"
-curl -O http://download.redis.io/redis-stable.tar.gz
-tar xzvf redis-stable.tar.gz
-(cd redis-stable; make)
-(cd redis-stable; make install)
-redis-server > logs.redis &
+apt-get install -y redis-server
 #install mailhog
 echo "Installing mailhog"
 echo "deb http://repo.deogracia.xyz/debian precise contrib" | tee -a /etc/apt/sources.list.d/mailhog-debian-package.list
