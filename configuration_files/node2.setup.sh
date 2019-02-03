@@ -1,3 +1,4 @@
+sudo cp ./consul.service /etc/systemd/system/consul.service
 #install required packages
 echo "Installing required packages"
 apt-get update
@@ -24,9 +25,12 @@ echo "Installing consul"
 wget https://releases.hashicorp.com/consul/1.4.1/consul_1.4.1_linux_amd64.zip -O consul.zip --quiet
 unzip consul.zip >/dev/null
 chmod +x consul
+mkdir /applications
+mkdir /applications/consul
+cp ./consul ./consul.config.json /applications/consul/
 #run consul
-echo "Running consul"
-./consul agent -dev -enable-script-checks -bind "192.168.33.11" -join "192.168.33.10" -node=node2 -config-file=./node2.consul.config.json -client "0.0.0.0"  > logs.consul &
+systemctl enable consul.service
+systemctl start consul.service
     
 echo "Setting up dns"
 echo "server=/consul/192.168.33.11#8600" > /etc/dnsmasq.d/10-consul

@@ -1,0 +1,14 @@
+[Unit]
+Description=Consul
+
+[Service]
+WorkingDirectory=/applications/consul
+ExecStart=/applications/consul/consul agent -dev -enable-script-checks -bind "192.168.33.12" -join "192.168.33.11" -node=node3 -config-file=./consul.config.json -client "0.0.0.0"
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=api
+User=vagrant
+
+[Install]
+WantedBy=multi-user.target
